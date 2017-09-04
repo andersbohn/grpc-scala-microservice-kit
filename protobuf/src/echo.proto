@@ -11,6 +11,18 @@ service EchoService {
       post: "/api/v1/echo"
     };
   }
+
+  rpc SendStream (SendMessageRequest) returns (stream Message) {
+    option (google.api.http) = {
+      post: "/api/v1/echoStream"
+    };
+  }
+
+  rpc SendStreamStream (stream SendMessageRequest) returns (stream Message) {
+    option (google.api.http) = {
+      post: "/api/v1/echoStreamStream"
+    };
+  }
 }
 
 message SendMessageRequest {
