@@ -9,8 +9,7 @@ import mu.node.echod.util.FileUtils
 
 object EchoClient extends FileUtils {
 
-  def buildServiceStub(config: Config,
-                       fileForConfiguredPath: (String) => File = fileForAbsolutePath)
+  def buildServiceStub(config: Config, fileForConfiguredPath: (String) => File = fileForAbsolutePath)
     : EchoServiceGrpc.EchoServiceStub = {
 
     val sslContext = GrpcSslContexts
